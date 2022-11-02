@@ -1,38 +1,230 @@
-.App {
-  text-align: center;
+.app{
+    height: 100vh;
+    display: flex;
+    background-color: #020230;
+    color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main{
+    width: 78%;
+    background:  linear-gradient(to bottom ,rgba(0,0,0,0),#020230), center url("./Assets/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.pyramid{
+    width: 22%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.moneylist{
+    list-style: none;
+    width: 100%;
+    padding: 20px;
+}
+
+.moneyListItems{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.mlnumber{
+    font-size: 18px;
+    font-weight: 100;
+    width: 30%;
+}
+
+.mlamount{
+    font-size:20px;
+    font-weight: 300;
+    padding: 3px;
+}
+
+.moneyListItems.active{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: teal;
+}
+
+.top{
+    height: 50%;
+    position: relative;
+    
+}
+
+.timer{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border:5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    bottom: 10px;
+    left: 80px;
+}
+
+.bottom{
+    height: 50%;
+}
+
+.quiz{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.question{
+    width: 80%;
+    font-size: 20px;
+    background: linear-gradient(#100241,black); 
+    border:2px solid white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+
+}
+.answers{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.answer{
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(#100241,black); 
+    border: 1px white solid;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 10px;
+    cursor: pointer;
+    
+}
+
+.answer:hover,.answer.active{
+    background: darkblue;
+}
+
+.answer.correct{
+    animation: correct 3s ease forwards;
+}
+
+@keyframes correct {
+    0%,
+    22%,
+    42% {
+      background: darkblue;
+    }
+    20%,
+    40%,
+    60% {
+      background: linear-gradient(#0e0124, #22074d);
+    }
+    62%,
+    100% {
+      background: green;
+    }
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  .answer.wrong{
+    animation: wrong 3s ease forwards;
+}
+@keyframes wrong {
+    0%,
+    22%,
+    42% {   
+      background: darkblue;
+    }
+    20%,
+    40%,
+    60% {
+      background: linear-gradient(#0e0124, #22074d);
+    }
+    62%,
+    100% {
+      background: red;
+    }
+  }
+
+  .endText{
+    position: relative;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin:auto;
+  }
+.mainStart{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .start {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
-  }
+  .sHeading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 50%;
+    left: 130px;
+    top: 100px;
 }
+  .startInput {
+    width: 50%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .startInput:focus {
+    outline: none;
+  }
+  
+  .startButton {
+    width: 50%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+
+
+  
+  .logo{
+
+    position: absolute;
+    top: 150px;
+    left: 360px;
+
+  }
